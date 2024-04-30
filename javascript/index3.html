@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function factorial(num) {
+    if (num === 0 || num === 1)
+        return 1;
+    for (var i = num - 1; i >= 1; i--) {
+        num *= i;
+    }
+    return num;
+}
+
+console.log(factorial(5)); 
+
+function scopeExample() {
+    var varVariable = "var variable";
+    let letVariable = "let variable";
+    const constVariable = "const variable";
+
+    console.log(varVariable); 
+    console.log(letVariable); 
+    console.log(constVariable); 
+
+    console.log(window.varVariable); 
+    console.log(window.letVariable); 
+    console.log(window.constVariable); 
+}
+
+scopeExample();
+
+function outerFunction() {
+    let outerVar = "Outer variable";
+
+    function innerFunction() {
+        let innerVar = "Inner variable";
+        console.log(innerVar); 
+        console.log(outerVar); 
+    }
+
+    innerFunction();   
+}
+outerFunction();
+
+</script>
+</body>
+</html>

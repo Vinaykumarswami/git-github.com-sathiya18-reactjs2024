@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage Example</title>
+</head>
+<body>
+    <!-- Input form -->
+    <form id="dataForm">
+        <label for="inputData">Enter Data:</label>
+        <input type="text" id="inputData" placeholder="Type something...">
+        <button type="submit">Save</button>
+    </form>
+
+    <!-- Display stored data -->
+    <div id="displayData"></div>
+
+    <!-- Clear data button -->
+    <button id="clearButton">Clear Stored Data</button>
+
+    <script>
+        // Retrieve stored data and display it
+        function displayStoredData() {
+            const storedData = localStorage.getItem('userInput');
+            document.getElementById('displayData').textContent = storedData || 'No data stored.';
+        }
+
+        // Save user input to localStorage
+        document.getElementById('dataForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const userInput = document.getElementById('inputData').value;
+            localStorage.setItem('userInput', userInput);
+            displayStoredData();
+        });
+
+        // Clear stored data
+        document.getElementById('clearButton').addEventListener('click', function () {
+            localStorage.removeItem('userInput');
+            displayStoredData();
+        });
+
+        // Initial display
+        displayStoredData();
+    </script>
+</body>
+</html>

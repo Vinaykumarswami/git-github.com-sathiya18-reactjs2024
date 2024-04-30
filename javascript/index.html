@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div>
+                <h2>NAME : VINAY KUMAR SWAMI</h2>
+                <h2>ROLL.NUMBER :21CS1060</h2>
+                <h2>SUBJECT : WT LAB</h2>
+            </div>
+        </div>
+    </div>
+    
+    <table>
+        <tr>
+            <td>
+                <h2>Experiment number</h2>
+            </td>
+            <td>
+                <h2>Experiment Name</h2>
+            </td>
+            <td>
+                <h2>Experiment Link</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>1.</h2>
+            </td>
+            <td>
+                <h2>Basic JavaScript Syntax and Operations</h2>
+            </td>
+            <td>
+                <button data-index="1">click</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>2.</h2>
+            </td>
+            <td>
+                <h2>Control Flow</h2>
+            </td>
+            <td>
+                <button data-index="2">click</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>3.</h2>
+            </td>
+            <td>
+                <h2>Functions and Scope</h2>
+            </td>
+            <td>
+                <button data-index="3">click</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>4.</h2>
+            </td>
+            <td>
+                <h2>DOM Manipulation</h2>
+            </td>
+            <td>
+                <button data-index="4">click</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>5.</h2>
+            </td>
+            <td>
+                <h2>Event Handling</h2>
+            </td>
+            <td>
+                <button data-index="5">click</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>6.</h2>
+            </td>
+            <td>
+                <h2>Web Storage</h2>
+            </td>
+            <td>
+                <button data-index="6">click</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>7.</h2>
+            </td>
+            <td>
+                <h2>Fetch API and AJAX</h2>
+            </td>
+            <td>
+                <button data-index="7">click</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>8.</h2>
+            </td>
+            <td>
+                <h2>Promises and Async/Await</h2>
+            </td>
+            <td>
+                <button data-index="8">click</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>9.</h2>
+            </td>
+            <td>
+                <h2>JavaScript Modules</h2>
+            </td>
+            <td>
+                <button data-index="9">click</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>10.</h2>
+            </td>
+            <td>
+                <h2>Building a Simple SPA (Single Page Application)</h2>
+            </td>
+            <td>
+                <button data-index="10">click</button>
+            </td>
+        </tr>
+        
+    </table>
+    <script>
+        document.querySelectorAll('button').forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                var index = button.getAttribute('data-index');
+                if (index) {
+                    window.location.href = 'index' + index + '.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

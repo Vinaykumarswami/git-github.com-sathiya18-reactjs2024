@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  #movableElement {
+    position: absolute; 
+    width: 50px;
+    height: 50px; 
+    background-color: red; 
+    top: 100px; 
+    left: 100px; 
+  }
+</style>
+<body>
+  <button id="myButton">Click me</button> 
+
+  <form id="myForm"> 
+    <input type="email" id="emailInput" placeholder="Enter your email">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="movableElement" style="position: absolute; top: 100px; left: 100px;"> Move me  </div> 
+
+  <script>
+   
+    const myButton = document.getElementById('myButton');
+    myButton.addEventListener('click', () => {
+      alert('Button clicked!'); 
+    });
+
+    const myForm = document.getElementById('myForm');
+    myForm.addEventListener('submit', (event) => {
+      const emailInput = document.getElementById('emailInput');
+      const emailValue = emailInput.value.trim();
+
+      if (!isValidEmail(emailValue)) {
+        event.preventDefault(); 
+        alert('Please enter a valid email address.');
+      }
+    });
+
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const movableElement = document.getElementById('movableElement');
+  let posX = 100;
+  let posY = 100;
+
+  document.addEventListener('keydown', (event) => {
+    switch (event.key) {
+      case 'ArrowUp':
+        posY -= 10;
+        break;
+      case 'ArrowDown':
+        posY += 10;
+        break;
+      case 'ArrowLeft':
+        posX -= 10;
+        break;
+      case 'ArrowRight':
+        posX += 10;
+        break;
+    }
+    const minX = 0;
+    const minY = 0;
+    const maxX = window.innerWidth - movableElement.offsetWidth;
+    const maxY = window.innerHeight - movableElement.offsetHeight;
+
+    posX = Math.max(minX, Math.min(maxX, posX));
+    posY = Math.max(minY, Math.min(maxY, posY));
+
+    movableElement.style.top = posY + 'px';
+    movableElement.style.left = posX + 'px';
+  });
+});
+  </script>
+</body>
+</html>

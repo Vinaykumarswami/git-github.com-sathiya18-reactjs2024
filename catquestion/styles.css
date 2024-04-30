@@ -1,0 +1,39 @@
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.available {
+  background-color: green;
+  color: white;
+}
+
+.borrowed {
+  background-color: red;
+  color: white;
+}
+
+#totalPrice {
+  margin-top: 20px;
+}
+
+.bookInfo {
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.borrowInfo {
+  margin-top: 5px;
+}
+
+.borrowTime, .returnTime {
+  font-weight: bold;
+  color: #333;
+}

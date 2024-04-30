@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <div id="textDiv">
+        Original Text
+    </div>
+
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <button id="toggleButton">Toggle Visibility</button>
+    <script>
+        document.getElementById("textDiv").textContent = "Updated Text";
+
+        var newListElement = document.createElement("li");
+        newListElement.textContent = "New Item";
+        document.getElementById("list").appendChild(newListElement);
+
+        document.getElementById("toggleButton").addEventListener("click", toggleVisibility);
+
+        function toggleVisibility() {
+            var elementToToggle = document.getElementById("textDiv");
+            if (elementToToggle.style.display === "none" || elementToToggle.style.display === "") {
+                elementToToggle.style.display = "block";
+            } else {
+                elementToToggle.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
